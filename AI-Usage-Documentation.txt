@@ -1,0 +1,14 @@
+AI Usage Disclosure
+
+I used ChatGPT (GPT-5.6) on September 26, 2026 to help create an initial version of the IPv4 parsing program.
+
+Prompt used:
+“I need a C++ program for a lab that extracts and validates an IPv4 address with an optional port from text. It cannot use number conversion functions, regex, or IP parsing libraries. The program should parse values character by character and follow the provided IPv4 and port rules.”
+
+ChatGPT generated the initial program structure, including the input loop, candidate scanning, manual digit conversion, and IPv4 validation logic.
+
+I reviewed the generated code and tested it with valid and invalid addresses. During testing, I corrected validation problems involving leading zeros and numeric boundary values. I also reviewed and modified comments and formatting.
+
+I understand the submitted code and tested the final version using normal input, malformed addresses, leading-zero cases, and boundary values.
+
+The final submitted version has no known unresolved bugs.
