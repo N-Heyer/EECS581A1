@@ -54,12 +54,15 @@ bool validateToken(const string& token,
             return false;
 
 
+        // AI error was digits > 2 when should be 1 
+        // Checks for leading zeros in an octet, if there are more than 1 digit
+        // and it starts with a 0 the octet is invalid
+        if (digits > 1 && token[start] == '0')
+        return false;
 
-        if (digits > 2 && token[start] == '0')
-            return false;
-
-
-        if (value > 256)
+        // AI error was 256 and should be 255 
+        // IPv4 octets can only have values from 0 to 255 anything greater than 255 is invalid
+        if (value > 255)
             return false;
 
 
@@ -114,8 +117,9 @@ bool validateToken(const string& token,
         if (digits > 1 && token[portStart] == '0')
             return false;
 
-
-        if (portValue > 65536)
+        // AI error was 65536 when it should be 65535
+        // port numbers are only from 0 to 65535 and anything greater is invalid
+        if (portValue > 65535)
             return false;
 
 
